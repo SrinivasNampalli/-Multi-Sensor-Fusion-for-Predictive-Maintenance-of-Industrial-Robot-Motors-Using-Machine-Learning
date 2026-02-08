@@ -1,28 +1,18 @@
 # Motor Predictive Maintenance Analysis
 
-This project implements a multi-sensor fusion approach for predictive maintenance of industrial robot motors using machine learning. It analyzes sensor data (temperature, voltage, position) to detect anomalies and predict potential failures.
+Predictive maintenance for industrial robot motors using machine learning. This combines data from different sensors (temperature, voltage, position) to Spot anomalies and catch potential failures early.
 
 ## Project Structure
 
 ```
 ├── data/               # Data directory
-│   └── raw/            # Raw sensor data (CSV files per session/motor)
 ├── docs/               # Documentation
-├── figures/            # Generated figures for reports/papers
-├── models/             # Directory for saving trained models
-├── plots/              # Generated plots and dashboards
-├── scripts/            # Executable scripts for analysis and training
-│   ├── main_analysis.py          # Main complete analysis pipeline
-│   ├── train_and_save_models.py  # Train ML models and save them
-│   ├── generate_ieee_figures.py  # Generate publication-quality figures
-│   ├── model_predictor.py        # Class for making predictions
-│   ├── use_trained_models.py     # Example usage of trained models
-│   └── test_models.py            # Unit tests for models
-├── src/                # Source code modules
-│   ├── data_loader.py            # Data loading and processing
-│   ├── eda_visualizer.py         # Exploratory Data Analysis & Visualization
-│   └── ml_models.py              # Machine Learning model definitions
-└── requirements.txt    # Python dependencies
+├── figures/            # Figures for the paper
+├── models/             # Saved models
+├── plots/              # Plots and dashboards
+├── scripts/            # Analysis and training scripts
+├── src/                # Source code
+└── requirements.txt    # Dependencies
 ```
 
 ## Setup
@@ -34,37 +24,37 @@ This project implements a multi-sensor fusion approach for predictive maintenanc
 
 ## Usage
 
-### 1. Run Complete Analysis
-To run the full analysis pipeline, including data loading, EDA, anomaly detection, and report generation:
+### 1. Run Analysis
+Runs the data loading, analysis, and report generation.
 
 ```bash
 python scripts/main_analysis.py
 ```
-This will generate:
--   A research report: `Motor_Predictive_Maintenance_Report.md`
--   Visualizations in the `plots/` directory.
+Outputs:
+-   Report: `Motor_Predictive_Maintenance_Report.md`
+-   Visualizations in `plots/`
 
-### 2. Train and Save Models
-To train the Random Forest and XGBoost models and save them for later use:
+### 2. Train Models
+Train the models (Random Forest, XGBoost) and save them.
 
 ```bash
 python scripts/train_and_save_models.py
 ```
-Models will be saved in `saved_models/`.
+Models go in `saved_models/`.
 
-### 3. Generate Publication Figures
-To generate high-quality, IEEE-compliant figures for the research paper:
+### 3. Generate Diagrams
+Create the figures used in the paper.
 
 ```bash
 python scripts/generate_ieee_figures.py
 ```
-Figures will be saved in `plots/` with "ieee_" prefix.
+Figures go in `plots/`.
 
 ### 4. Make Predictions
-To use the trained models for making predictions on new data, see `scripts/use_trained_models.py` for examples.
+See `scripts/use_trained_models.py` for how to run predictions on new data.
 
-## Key Features
--   **Data Loading**: Handles multiple test sessions and motor data files.
--   **Anomaly Detection**: Uses IQR and Z-score methods to identify outliers.
--   **Machine Learning**: Implements Random Forest and XGBoost classifiers for failure prediction.
--   **Visualization**: Comprehensive dashboards for data distribution, correlations, and model performance.
+## Features
+-   **Data Loading**: Handles the raw motor session files.
+-   **Anomaly Detection**: Spots outliers using standard statistical methods.
+-   **Machine Learning**: Uses Random Forest and XGBoost.
+-   **Visualization**: diverse plots for data and model performance.
